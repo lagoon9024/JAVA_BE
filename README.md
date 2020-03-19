@@ -65,7 +65,7 @@ JAVA_BE study
   - redirect와 다르게 url은 바뀌지 않고, 브라우저에 req,res는 한번만 발생한다
   - jsp와 서블릿 연동에 많이 사용할 것으로 생각된다
 
-### 6 Scope
+### 6. Scope
 - Application, Session, Request, Page로 이루어져 있다  
 ![](http://1.bp.blogspot.com/-I9TZP5Q8wUQ/Taap2IYwyhI/AAAAAAAAAOg/68E71KBizEM/s400/scope.bmp)
 
@@ -103,3 +103,37 @@ JAVA_BE study
 	- 웹 어플리케이션 하나당 하나의 application 객체가 사용됨
 	- 값을 저장할 때는 application 객체의 setAttribute() 메서드, 읽어 들일때는 getAttribute() 메서드를 사용
 	- 모든 클라이언트가 공통으로 사용해야할 값들이 있을 때 사용
+
+
+### 7.  EL (Expression Language / 표현언어)
+- [EL01](exam31/WebContent/EL01.jsp),  [EL02](exam31/WebContent/EL02.jsp)
+- 디자이너, BE, FE 개발자 모두가 보기 좋은 형태의 언어에 대한 고민에서 만들어짐
+- 제공 기능
+	- JSP의 scope에 맞는 속성 사용
+	- 집합 객체에 대한 접근 방법 제공
+	- 수치 연산, 관계 연산, 논리 연산자 제공
+	- 자바 클래스 메소드 호출 기능 제공
+	- 표현언어만의 기본 객체 제공
+- 표현 언어의 표현 방법
+```java
+${expr}
+expr : 표현언어가 정의한 문법에 따라 값을 표현하는 식
+
+예제 ::
+<b><%=session.getAttribute("id")%></b>님 환영합니다
+<b>${sessionScope.id}</b>님 환영합니다
+```
+- 데이터 타입
+	- boolean, integer, float, string, null
+```
+${<표현1>.<표현2>}
+```
+- 객체 접근 규칙
+	-  표현 1이나 표현 2가 null이면 null을 반환
+	-   표현1이 Map일 경우 표현2를 key로한 값을 반환
+	-   표현1이 List나 배열이면 표현2가 정수일 경우 해당 index에 해당하는 값을 반환
+	-   정수가 아닐 경우에는 오류가 발생
+	-   표현1이 객체일 경우는 표현2에 해당하는 getter메소드를 호출한 결과를 반환
+- 표현 언어 비활성화 : JSP에 명시하기
+	-   <%@ page isELIgnored = "true" %>
+	-  위치에 상관없이 전체 적용된다
