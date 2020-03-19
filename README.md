@@ -9,7 +9,7 @@ JAVA_BE study
   - WAS(Web application server)에 deploy(설치)되어 동작하는 어플리케이션
   - HTML, CSS, 이미지, 자바로 작성된 클래스(Servlet, package, interface etc.), 각종 설정 파일 등 포함
 
-### 2. Servlet [SERVLET FILES] (/exam31/src/exam/)
+### 2. Servlet [SERVLET FILES](/exam31/src/exam/)
   - 자바 웹 어플리케이션에서 동적인 처리를 하는 프로그램 역할
   - WAS에 동작하는 JAVA Class
   - HttpServlet 클래스를 상속받아야 한다
