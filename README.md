@@ -9,7 +9,8 @@ JAVA_BE study
   - WAS(Web application server)에 deploy(설치)되어 동작하는 어플리케이션
   - HTML, CSS, 이미지, 자바로 작성된 클래스(Servlet, package, interface etc.), 각종 설정 파일 등 포함
 
-### 2. Servlet [SERVLET FILES](/exam31/src/exam/)
+### 2. Servlet 
+[SERVLET FILES](/exam31/src/exam/)
   - 자바 웹 어플리케이션에서 동적인 처리를 하는 프로그램 역할
   - WAS에 동작하는 JAVA Class
   - HttpServlet 클래스를 상속받아야 한다
@@ -17,14 +18,16 @@ JAVA_BE study
   - 웹 페이지를 개발할 때 JSP, 서블릿을 조화롭게 사용해야 한다(화면 -> JSP, 기능 -> 서블릿)
   - Servlet 3.0이상에선 web.xml을 사용하지 않는다.
   - Servlet 3.0이상에선 annotation을 사용한다.  
-    #### 2-1. Lifecycle [lifecycle_ex](/exam31/src/exam/LifeCycleServelet.java)
+    #### 2-1. Lifecycle 
+[lifecycle_ex](/exam31/src/exam/LifeCycleServelet.java)
     - init -> service -> destroy
     - WAS는 서블릿 요청을 받으면 해당 서블릿의 메모리 적재여부를 확인
     - 메모리에 없을 시 init()
     - service() 메소드를 통해 request와 response를 처리한다(get, post etc..)
     - was가 종료되거나 web application이 새롭게 갱신될 경우 destroy() 메소드 실행
 
-### 3. JSP [JSP FILES](/exam31/WebContent/)
+### 3. JSP 
+[JSP FILES](/exam31/WebContent/)
   - MS의 ASP(Active Server Page)라는 웹 개발을 편리하게 해주는 script 엔진을 발표
   - ASP에 대항하기 위하여 JSP를 발표(썬마이크로시스템즈)
   - Servlet 기술을 사용한다
@@ -47,14 +50,18 @@ JAVA_BE study
     - response, request, application, session, out과 같은 변수를 내장객체라고 함
     - 내장객체는 JSP선언문에서 사용할 수 없다 -> 선언문의 경우 service 외부에 코드가 작성되기 때문에, service()메소드 내부의 지역변수인 내장객체의 사용을 할 수 없다.
 
-### 4. Redirect [redirect1](/exam31/WebContent/redirect01.jsp) [redirect2](/exam31/WebContent/redirect02.jsp)
+### 4. Redirect 
+[redirect1](/exam31/WebContent/redirect01.jsp)
+[redirect2](/exam31/WebContent/redirect02.jsp)
   - HTTP 프로토콜로 정해진 규칙
   - 서버는 클라이언트의 요청에 대해 특정 URL로 이동 요청을 할 수 있음 -> redirect
   - 상태코드 302로 응답, 헤더 내 location값에 이동할 url을 추가한다
   - 클라이언트는 리다이렉션 응답을 받으면 헤더에 포함된 url로 재요청을 보낸다
   - 서블릿이나 JSP는 HttpServletResponse 클래스의 sendRedirect()메소드를 사용한다
 
-### 5. Forwarding [forward1](/exam31/src/exam/frontservelet.java) [foward2](/exam31/src/exam/nextservelet.java)
+### 5. Forwarding
+[forward1](/exam31/src/exam/frontservelet.java)
+[foward2](/exam31/src/exam/nextservelet.java)
   - HttpServletRequest와 HttpServletResponse를 같은 web application 내에 존재하는 servlet2에게 전송(forward)
   - servlet2는 servlet1으로 밭은 req,res를 이용해 요청을 처리하고, 웹브라우저에 결과를 전송
   - redirect와 다르게 url은 바뀌지 않고, 브라우저에 req,res는 한번만 발생한다
@@ -92,7 +99,10 @@ JAVA_BE study
 	- 값을 저장시에는 session 객체의 setAttribute() 메서드, 읽어들일 때는 getAttribute() 메서드를 사용
 	- 장바구니처럼 클라이언트별로 유지가 되어야 할 정보가 있을 때 사용
 	#### 6-4 Application scope
-	- 웹 어플리케이션이 시작되고 종료될 때까지 변수를 사용할 수 있음
+[Application Scope Servlet 1](/exam31/src/exam/ApplicationScope01.java)
+[Application Scope Servlet 2](/exam31/src/exam/ApplicationScope02.java)
+[Application Scope JSP](/exam31/WebContent/applicationscope01.jsp)
+	- 웹 어플리케이션이 시작되고 종료될 때까지 변수를 사용할 수 있음(브라우저나 접속위치에 상관 없이 같은 변수를 사용)
 	- ServletContext 인터페이스를 구현한 객체를 사용
 	- JSP에서는 application 내장 객체를 이용하고, 서블릿의 경우 getServletContext() 메서드를 이용하여 application 객체를 이용
 	- 웹 어플리케이션 하나당 하나의 application 객체가 사용됨
