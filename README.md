@@ -59,3 +59,13 @@ JAVA_BE study
   - servlet2는 servlet1으로 밭은 req,res를 이용해 요청을 처리하고, 웹브라우저에 결과를 전송
   - redirect와 다르게 url은 바뀌지 않고, 브라우저에 req,res는 한번만 발생한다
   - jsp와 서블릿 연동에 많이 사용할 것으로 생각된다
+
+### 6 Scope
+- Application, Session, Request, Page로 이루어져 있다
+![](http://1.bp.blogspot.com/-I9TZP5Q8wUQ/Taap2IYwyhI/AAAAAAAAAOg/68E71KBizEM/s400/scope.bmp)
+
+<sub> 출처 : http://inheritingjava.blogspot.com/2011/04/chapter-42-scope-of-javabeans-in-jsp.html </sub>
+- Application : 웹 어플리케이션이 시작되고 종료될 때까지 변수가 유지되는 경우 사용
+- Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
+- Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
+-   Page : 페이지 내에서 지역변수처럼 사용
