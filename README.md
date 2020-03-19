@@ -2,7 +2,7 @@
 JAVA_BE study
 - use Apache tomcat 9.0
 - use jdk 13.0.1
-- Referrance : https://edwith.org/boostcourse-web/
+- Reference : https://edwith.org/boostcourse-web/
 
 ---
 ### 1. Java Web Application
