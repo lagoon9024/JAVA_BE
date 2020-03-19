@@ -69,3 +69,32 @@ JAVA_BE study
 - Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
 - Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
 -   Page : 페이지 내에서 지역변수처럼 사용
+
+	#### 6-1 Page scope
+	- PageContext 추상 클래스 사용
+	- JSP 페이지에서 pageContext라는 내장객체로 사용 가능
+	- forward가 될 경우 해당 Page scope에 지정된 변수는 사용할 수 없다
+	- 사용방법은 다른 scope와 같다
+	- 지역변수처럼 사용된다는 점이 다른 scope들과 다르다
+	- jsp에서 pageScope에 값을 저장한 후 해당 값을 EL표기법 등에서 사용할 때 사용
+	- 해당 jsp나 서블릿이 실행되는 동안에만 정보를 유지하고자 할 때 사용
+	#### 6-2 Request Scope
+	- http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수값을 유지하고자 할 경우 사용
+	- HttpServletRequest 객체를 사용
+	- JSP에서는 request 내장변수, 서블릿에서는 HttpServletRequest객체 사용
+	- 값을 저장시에는 request 객체의 setAttribute() 메서드, 읽어들일 때는 getAttribute() 메서드를 사용
+	- forward시 값을 유지하고자 사용
+	#### 6-3 Session scope
+	- 웹 브라우저(클라이언트) 별 변수를 관리하고자 할 경우 사용
+	- 브라우저의 탭간에는 세션정보가 공유 -> 각각의 탭에서 같은 세션정보 사용 가능
+	- HttpSession 인터페이스를 구현한 객체를 사용
+	- JSP에서는 session 내장 변수를 사용하고, 서블릿에서는 HttpServletRequest의 getSession() 메서드를 이용하여 session 객체를 얻는다
+	- 값을 저장시에는 session 객체의 setAttribute() 메서드, 읽어들일 때는 getAttribute() 메서드를 사용
+	- 장바구니처럼 클라이언트별로 유지가 되어야 할 정보가 있을 때 사용
+	#### 6-4 Application scope
+	- 웹 어플리케이션이 시작되고 종료될 때까지 변수를 사용할 수 있음
+	- ServletContext 인터페이스를 구현한 객체를 사용
+	- JSP에서는 application 내장 객체를 이용하고, 서블릿의 경우 getServletContext() 메서드를 이용하여 application 객체를 이용
+	- 웹 어플리케이션 하나당 하나의 application 객체가 사용됨
+	- 값을 저장할 때는 application 객체의 setAttribute() 메서드, 읽어 들일때는 getAttribute() 메서드를 사용
+	- 모든 클라이언트가 공통으로 사용해야할 값들이 있을 때 사용
