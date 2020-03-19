@@ -61,7 +61,7 @@ JAVA_BE study
   - jsp와 서블릿 연동에 많이 사용할 것으로 생각된다
 
 ### 6 Scope
-- Application, Session, Request, Page로 이루어져 있다
+- Application, Session, Request, Page로 이루어져 있다  
 ![](http://1.bp.blogspot.com/-I9TZP5Q8wUQ/Taap2IYwyhI/AAAAAAAAAOg/68E71KBizEM/s400/scope.bmp)
 
 <sub> 출처 : http://inheritingjava.blogspot.com/2011/04/chapter-42-scope-of-javabeans-in-jsp.html </sub>
