@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.util.*" %>
-<c:import url="http://localhost:8080/exam31/jstlValue.jsp" var="urlValue" scope="request"></c:import>
+<c:import url="http://localhost:8080/exam31/jstl/jstlValue.jsp" var="urlValue" scope="request"></c:import>
 
 <!DOCTYPE html>
 <html>
