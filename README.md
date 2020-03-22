@@ -137,3 +137,6 @@ ${<표현1>.<표현2>}
 - 표현 언어 비활성화 : JSP에 명시하기
 	-   <%@ page isELIgnored = "true" %>
 	-  페이지 내 위치에 상관없이 페이지 전체에 적용된다
+
+### 8. [JSTL(JSP Standart Tag Library)](https://github.com/lagoon9024/dailystudy/200322/0322.md)
+
