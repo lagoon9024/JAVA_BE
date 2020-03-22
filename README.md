@@ -138,5 +138,5 @@ ${<표현1>.<표현2>}
 	-   <%@ page isELIgnored = "true" %>
 	-  페이지 내 위치에 상관없이 페이지 전체에 적용된다
 
-### 8. [JSTL(JSP Standart Tag Library)](https://github.com/lagoon9024/dailystudy/200322/0322.md)
+### 8. [JSTL(JSP Standard Tag Library)](https://github.com/lagoon9024/dailystudy/blob/master/200322/0322.md)
 
