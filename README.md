@@ -142,5 +142,6 @@ ${<표현1>.<표현2>}
 
 ### 9. [Maven](https://github.com/lagoon9024/dailystudy/blob/master/200324/0324.md)
 - [실습코드](./mavenweb/pom.xml)
+- pom.xml을 변경하면 꼭 maven project update를 해주자!
 ### 10. JDBC
 - [실습코드](./jdbcexam)
